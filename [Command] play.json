@@ -1,0 +1,407 @@
+{
+    "name": "!play",
+    "permissions": "SPEAK",
+    "restriction": "1",
+    "_id": "bhGxd",
+    "actions": [
+      {
+        "storage": "0",
+        "varName": "",
+        "reason": "[BOT] AutoDelete Command",
+        "name": "Delete Message"
+      },
+      {
+        "server": "0",
+        "info": "1",
+        "storage": "1",
+        "varName": "BotIsPlaying",
+        "varName2": "",
+        "name": "Store Audio Info"
+      },
+      {
+        "server": "0",
+        "info": "5",
+        "storage": "1",
+        "varName": "ql",
+        "varName2": "",
+        "name": "Store Audio Info"
+      },
+      {
+        "member": "1",
+        "varName": "",
+        "info": "4",
+        "varName2": "",
+        "iftrue": "0",
+        "iftrueVal": "command.start",
+        "iffalse": "4",
+        "iffalseVal": "not.in.vc",
+        "name": "Check If Member"
+      },
+      {
+        "condition": "0",
+        "comparison": "4",
+        "value": "0",
+        "iftrue": "4",
+        "iftrueVal": "0",
+        "iffalse": "0",
+        "iffalseVal": "",
+        "name": "Check Parameters"
+      },
+      {
+        "storage": "1",
+        "varName": "ql",
+        "comparison": "14",
+        "value": "1",
+        "iftrue": "4",
+        "iftrueVal": "queue",
+        "iffalse": "0",
+        "iffalseVal": "",
+        "name": "Check Variable"
+      },
+      {
+        "storage": "1",
+        "varName": "BotIsPlaying",
+        "comparison": "2",
+        "value": "true",
+        "iftrue": "4",
+        "iftrueVal": "queue",
+        "iffalse": "4",
+        "iffalseVal": "command.start",
+        "name": "Check Variable"
+      },
+      {
+        "name": "End Action Sequence"
+      },
+      {
+        "anchor_id": "noVars",
+        "color": "#ff8080",
+        "description": "vars not exists",
+        "name": "Create Anchor"
+      },
+      {
+        "title": "❕ Необходимо ввести название песни или ссылку",
+        "author": "",
+        "color": "#14E2B2",
+        "url": "",
+        "authorIcon": "",
+        "authorUrl": "",
+        "imageUrl": "",
+        "thumbUrl": "",
+        "timestamp": "false",
+        "debug": "false",
+        "text": "",
+        "year": "",
+        "month": "",
+        "day": "",
+        "hour": "",
+        "minute": "",
+        "second": "",
+        "storage": "1",
+        "varName": "noVarsMsg",
+        "name": "Create Embed Message"
+      },
+      {
+        "storage": "1",
+        "varName": "noVarsMsg",
+        "message": "Пример: `!play [название или ссылка]`",
+        "name": "Set Embed Description"
+      },
+      {
+        "storage": "1",
+        "varName": "noVarsMsg",
+        "message": "BlackCat | Music",
+        "footerIcon": "${tempVars(\"botAVA\")}",
+        "name": "Set Embed Footer"
+      },
+      {
+        "storage": "1",
+        "varName": "noVarsMsg",
+        "channel": "0",
+        "varName2": "",
+        "storage3": "1",
+        "varName3": "mess2",
+        "iffalse": "0",
+        "iffalseVal": "",
+        "messageContent": "",
+        "name": "Send Embed Message"
+      },
+      {
+        "time": "20",
+        "measurement": "1",
+        "name": "Wait"
+      },
+      {
+        "storage": "1",
+        "varName": "noVarsMsg",
+        "reason": "",
+        "name": "Delete Message"
+      },
+      {
+        "name": "End Action Sequence"
+      },
+      {
+        "anchor_id": "startNewQueue",
+        "color": "#80ff80",
+        "description": "Start a new Queue",
+        "name": "Create Anchor"
+      },
+      {
+        "info": "1",
+        "infoIndex": "1",
+        "storage": "1",
+        "varName": "toSearch",
+        "name": "Store Command Params"
+      },
+      {
+        "token": "",
+        "user": "",
+        "pass": "",
+        "url": "https://yt-scraper.eclipseapis.ga/api/v1/video?q=${tempVars(\"toSearch\")}",
+        "path": "url",
+        "storage": "1",
+        "varName": "url",
+        "debugMode": "0",
+        "headers": "",
+        "reUse": "1",
+        "name": "Store Json From WebAPI"
+      },
+      {
+        "iftrue": "3",
+        "iftrueVal": "1",
+        "iffalse": "0",
+        "iffalseVal": "",
+        "name": "Check is Bot in Voice Channel"
+      },
+      {
+        "channel": "0",
+        "varName": "",
+        "name": "Join Voice Channel"
+      },
+      {
+        "url": "${tempVars(\"url\")}",
+        "seek": "",
+        "volume": "${serverVars(\"botVOL\")}",
+        "passes": "",
+        "bitrate": "",
+        "type": "0",
+        "name": "Play YouTube Video"
+      },
+      {
+        "name": "End Action Sequence"
+      },
+      {
+        "anchor_id": "userNotCH",
+        "color": "#ff8080",
+        "description": "User is not in Channel",
+        "name": "Create Anchor"
+      },
+      {
+        "title": "❌Вы должны быть в голосовом канале, чтобы воспроизводить музыку",
+        "author": "",
+        "color": "",
+        "url": "",
+        "authorIcon": "",
+        "authorUrl": "",
+        "imageUrl": "",
+        "thumbUrl": "",
+        "timestamp": "false",
+        "debug": "false",
+        "text": "",
+        "year": "",
+        "month": "",
+        "day": "",
+        "hour": "",
+        "minute": "",
+        "second": "",
+        "storage": "1",
+        "varName": "embed",
+        "name": "Create Embed Message"
+      },
+      {
+        "storage": "1",
+        "varName": "embed",
+        "channel": "0",
+        "varName2": "",
+        "storage3": "1",
+        "varName3": "mess1",
+        "iffalse": "0",
+        "iffalseVal": "",
+        "messageContent": "",
+        "name": "Send Embed Message"
+      },
+      {
+        "time": "20",
+        "measurement": "1",
+        "name": "Wait"
+      },
+      {
+        "storage": "1",
+        "varName": "mess1",
+        "reason": "",
+        "name": "Delete Message"
+      },
+      {
+        "name": "End Action Sequence"
+      },
+      {
+        "anchor_id": "addQueue",
+        "color": "#80ff80",
+        "description": "Add to Queue",
+        "name": "Create Anchor"
+      },
+      {
+        "info": "1",
+        "infoIndex": "1",
+        "storage": "1",
+        "varName": "toSearch",
+        "name": "Store Command Params"
+      },
+      {
+        "member": "1",
+        "varName": "",
+        "info": "21",
+        "storage": "1",
+        "varName2": "memTag",
+        "name": "Store Member Info"
+      },
+      {
+        "token": "",
+        "user": "",
+        "pass": "",
+        "url": "https://yt-scraper.eclipseapis.ga/api/v1/video?q=${tempVars(\"toSearch\")}",
+        "path": "url",
+        "storage": "1",
+        "varName": "url",
+        "debugMode": "0",
+        "headers": "",
+        "reUse": "1",
+        "name": "Store Json From WebAPI"
+      },
+      {
+        "token": "",
+        "user": "",
+        "pass": "",
+        "url": "https://yt-scraper.eclipseapis.ga/api/v1/video?q=${tempVars(\"toSearch\")}",
+        "path": "seconds",
+        "storage": "1",
+        "varName": "seconds",
+        "debugMode": "0",
+        "headers": "",
+        "reUse": "1",
+        "name": "Store Json From WebAPI"
+      },
+      {
+        "token": "",
+        "user": "",
+        "pass": "",
+        "url": "https://yt-scraper.eclipseapis.ga/api/v1/video?q=${tempVars(\"toSearch\")}",
+        "path": "timestamp",
+        "storage": "1",
+        "varName": "duration",
+        "debugMode": "0",
+        "headers": "",
+        "reUse": "1",
+        "name": "Store Json From WebAPI"
+      },
+      {
+        "token": "",
+        "user": "",
+        "pass": "",
+        "url": "https://yt-scraper.eclipseapis.ga/api/v1/video?q=${tempVars(\"toSearch\")}",
+        "path": "title",
+        "storage": "1",
+        "varName": "title",
+        "debugMode": "0",
+        "headers": "",
+        "reUse": "1",
+        "name": "Store Json From WebAPI"
+      },
+      {
+        "token": "",
+        "user": "",
+        "pass": "",
+        "url": "https://yt-scraper.eclipseapis.ga/api/v1/video?q=${tempVars(\"toSearch\")}",
+        "path": "image",
+        "storage": "1",
+        "varName": "image",
+        "debugMode": "0",
+        "headers": "",
+        "reUse": "1",
+        "name": "Store Json From WebAPI"
+      },
+      {
+        "server": "0",
+        "info": "5",
+        "storage": "1",
+        "varName": "ql",
+        "varName2": "",
+        "name": "Store Audio Info"
+      },
+      {
+        "url": "${tempVars(\"url\")}",
+        "seek": "",
+        "volume": "${serverVars(\"botVOL\")}",
+        "passes": "",
+        "bitrate": "",
+        "type": "0",
+        "name": "Play YouTube Video"
+      },
+      {
+        "title": "🎶 Добавлено в очередь:",
+        "author": "",
+        "color": "#14E2B2",
+        "url": "",
+        "authorIcon": "",
+        "authorUrl": "",
+        "imageUrl": "${tempVars(\"image\")}",
+        "thumbUrl": "",
+        "timestamp": "false",
+        "debug": "false",
+        "text": "",
+        "year": "",
+        "month": "",
+        "day": "",
+        "hour": "",
+        "minute": "",
+        "second": "",
+        "storage": "1",
+        "varName": "addQueueMsg",
+        "name": "Create Embed Message"
+      },
+      {
+        "storage": "1",
+        "varName": "addQueueMsg",
+        "message": "**${tempVars(\"title\")}**\n\n**Продолжительность:** ${tempVars(\"duration\")}\n**Место в очереди:** ${tempVars(\"ql\")+1}\n**Добавил:** ${tempVars(\"memtag\")}",
+        "name": "Set Embed Description"
+      },
+      {
+        "storage": "1",
+        "varName": "addQueueMsg",
+        "fieldName": "",
+        "message": "**`!queue` чтоб увидеть список очереди**\n**`!np` ~~не работает~~**\n**`!volume` ~~не работает~~**",
+        "inline": "1",
+        "name": "Add Embed Field"
+      },
+      {
+        "storage": "1",
+        "varName": "addQueueMsg",
+        "message": "BlackCat | Music",
+        "footerIcon": "${tempVars(\"botAVA\")}",
+        "name": "Set Embed Footer"
+      },
+      {
+        "storage": "1",
+        "varName": "addQueueMsg",
+        "channel": "6",
+        "varName2": "dj_ch",
+        "storage3": "0",
+        "varName3": "",
+        "iffalse": "0",
+        "iffalseVal": "",
+        "messageContent": "",
+        "name": "Send Embed Message"
+      }
+    ],
+    "event-type": "0",
+    "comType": "0"
+  }

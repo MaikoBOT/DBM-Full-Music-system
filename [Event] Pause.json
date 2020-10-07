@@ -1,0 +1,88 @@
+{
+    "name": "[Music] Pause",
+    "temp": "",
+    "event-type": "On Audio Pause",
+    "_id": "ekcCO",
+    "actions": [
+      {
+        "storage": "2",
+        "varName": "bot_pause",
+        "changeType": "0",
+        "value": "1",
+        "name": "Control Variable"
+      },
+      {
+        "storage": "2",
+        "varName": "bot_pause",
+        "name": "Save Variable"
+      },
+      {
+        "server": "0",
+        "info": "9",
+        "storage": "1",
+        "varName": "songURL",
+        "varName2": "",
+        "name": "Store Audio Info"
+      },
+      {
+        "token": "",
+        "user": "",
+        "pass": "",
+        "url": "https://yt-scraper.eclipseapis.ga/api/v1/video?q=${tempVars(\"songURL\")}",
+        "path": "title",
+        "storage": "1",
+        "varName": "title",
+        "debugMode": "0",
+        "headers": "",
+        "reUse": "1",
+        "name": "Store Json From WebAPI"
+      },
+      {
+        "title": "⏸ Приостановлено",
+        "author": "",
+        "color": "#33def5",
+        "url": "",
+        "authorIcon": "",
+        "authorUrl": "",
+        "imageUrl": "",
+        "thumbUrl": "",
+        "timestamp": "false",
+        "debug": "false",
+        "text": "",
+        "year": "",
+        "month": "",
+        "day": "",
+        "hour": "",
+        "minute": "",
+        "second": "",
+        "storage": "1",
+        "varName": "msg",
+        "name": "Create Embed Message"
+      },
+      {
+        "storage": "1",
+        "varName": "msg",
+        "message": "Песня: ${tempVars(\"title\")}.",
+        "name": "Set Embed Description"
+      },
+      {
+        "storage": "1",
+        "varName": "msg",
+        "message": "BlackCat | Music",
+        "footerIcon": "${globalVars(\"botAVA\")}",
+        "name": "Set Embed Footer"
+      },
+      {
+        "storage": "1",
+        "varName": "msg",
+        "channel": "6",
+        "varName2": "dj_ch",
+        "storage3": "0",
+        "varName3": "",
+        "iffalse": "0",
+        "iffalseVal": "",
+        "messageContent": "",
+        "name": "Send Embed Message"
+      }
+    ]
+  }

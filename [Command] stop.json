@@ -1,0 +1,162 @@
+{
+  "name": "!stop",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "CTGuV",
+  "actions": [
+    {
+      "storage": "0",
+      "varName": "mess",
+      "reason": "",
+      "name": "Delete Message"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "0",
+      "storage": "1",
+      "varName2": "autCMD",
+      "name": "Store Member Info"
+    },
+    {
+      "server": "0",
+      "info": "1",
+      "storage": "1",
+      "varName": "ip",
+      "varName2": "",
+      "name": "Store Audio Info"
+    },
+    {
+      "storage": "1",
+      "varName": "ip",
+      "comparison": "2",
+      "value": "true",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "4",
+      "iffalseVal": "notPlay",
+      "name": "Check Variable"
+    },
+    {
+      "action": "0",
+      "name": "Control Audio"
+    },
+    {
+      "name": "Clear Queue"
+    },
+    {
+      "name": "Leave Voice Channel"
+    },
+    {
+      "title": "🎶 Закончил играть музыку",
+      "author": "",
+      "color": "",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "debug": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "botSTOP",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "botSTOP",
+      "message": "`-Бот отключился от канала`\n`-Список воспроизведение очищен`",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "botSTOP",
+      "message": "BlackCat | Music",
+      "footerIcon": "${globalVars(\"botAVA\")}",
+      "name": "Set Embed Footer"
+    },
+    {
+      "storage": "1",
+      "varName": "botSTOP",
+      "channel": "6",
+      "varName2": "dj_ch",
+      "storage3": "0",
+      "varName3": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "messageContent": "${tempVars(\"autCMD\")}",
+      "name": "Send Embed Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "anchor_id": "notPlay",
+      "color": "#000000",
+      "description": "Bot not Playing",
+      "name": "Create Anchor"
+    },
+    {
+      "title": "❕ Бот сейчас не играет музыку",
+      "author": "",
+      "color": "",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "debug": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "botSTOP",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "botSTOP",
+      "message": "BlackCat | Music",
+      "footerIcon": "${globalVars(\"botAVA\")}",
+      "name": "Set Embed Footer"
+    },
+    {
+      "storage": "1",
+      "varName": "botSTOP",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "1",
+      "varName3": "mess",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "messageContent": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "time": "20",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "storage": "1",
+      "varName": "mess",
+      "reason": "",
+      "name": "Delete Message"
+    },
+    {
+      "name": "End Action Sequence"
+    }
+  ]
+}

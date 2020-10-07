@@ -1,0 +1,126 @@
+{
+    "name": "[Music] Start Play",
+    "temp": "chn",
+    "event-type": "On Audio Start",
+    "_id": "atNFt",
+    "actions": [
+      {
+        "server": "0",
+        "info": "9",
+        "storage": "1",
+        "varName": "songURL",
+        "varName2": "",
+        "name": "Store Audio Info"
+      },
+      {
+        "server": "0",
+        "info": "0",
+        "storage": "1",
+        "varName": "songVOL",
+        "varName2": "",
+        "name": "Store Audio Info"
+      },
+      {
+        "server": "0",
+        "info": "11",
+        "storage": "1",
+        "varName": "songMEM",
+        "varName2": "",
+        "name": "Store Audio Info"
+      },
+      {
+        "token": "",
+        "user": "",
+        "pass": "",
+        "url": "https://yt-scraper.eclipseapis.ga/api/v1/video?q=${tempVars(\"songURL\")}",
+        "path": "title",
+        "storage": "1",
+        "varName": "title",
+        "debugMode": "0",
+        "headers": "",
+        "reUse": "1",
+        "name": "Store Json From WebAPI"
+      },
+      {
+        "token": "",
+        "user": "",
+        "pass": "",
+        "url": "https://yt-scraper.eclipseapis.ga/api/v1/video?q=${tempVars(\"songURL\")}",
+        "path": "image",
+        "storage": "1",
+        "varName": "image",
+        "debugMode": "0",
+        "headers": "",
+        "reUse": "1",
+        "name": "Store Json From WebAPI"
+      },
+      {
+        "token": "",
+        "user": "",
+        "pass": "",
+        "url": "https://yt-scraper.eclipseapis.ga/api/v1/video?q=${tempVars(\"songURL\")}",
+        "path": "timestamp",
+        "storage": "1",
+        "varName": "duration",
+        "debugMode": "0",
+        "headers": "",
+        "reUse": "1",
+        "name": "Store Json From WebAPI"
+      },
+      {
+        "title": "🎶 Сейчас играет: ",
+        "author": "",
+        "color": "#14E2B2",
+        "url": "",
+        "authorIcon": "",
+        "authorUrl": "",
+        "imageUrl": "${tempVars(\"image\")}",
+        "thumbUrl": "",
+        "timestamp": "false",
+        "debug": "false",
+        "text": "",
+        "year": "",
+        "month": "",
+        "day": "",
+        "hour": "",
+        "minute": "",
+        "second": "",
+        "storage": "1",
+        "varName": "songPlay",
+        "name": "Create Embed Message"
+      },
+      {
+        "storage": "1",
+        "varName": "songPlay",
+        "message": "**${tempVars(\"title\")}**\n\n**Продолжительность:** ${tempVars(\"duration\")}.\n**Громкость:** ${tempVars(\"songVOL\")}%\n**Канал:** ${tempVars(\"chn\")}.\n**Добавил:** ${tempVars(\"songMEM\")}.",
+        "name": "Set Embed Description"
+      },
+      {
+        "storage": "1",
+        "varName": "songPlay",
+        "fieldName": "",
+        "message": "`!!queue` **Список очереди**\n`!!stop` **Остановить и очистить очередь.**\n`!!skip` **Пропустить песню.**\n`!!pause` **Приостановить, пауза.**\n`!!resume` **Продолжить играть, восстановить.**\n`!!volume` **Изменить уровень громкости**",
+        "inline": "1",
+        "name": "Add Embed Field"
+      },
+      {
+        "storage": "1",
+        "varName": "songPlay",
+        "message": "BlackCat | Music",
+        "footerIcon": "${globalVars(\"botAVA\")}",
+        "name": "Set Embed Footer"
+      },
+      {
+        "storage": "1",
+        "varName": "songPlay",
+        "channel": "6",
+        "varName2": "dj_ch",
+        "storage3": "0",
+        "varName3": "",
+        "iffalse": "0",
+        "iffalseVal": "",
+        "messageContent": "",
+        "name": "Send Embed Message"
+      }
+    ]
+  }
