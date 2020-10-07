@@ -4,6 +4,20 @@
 
 ### 🏠 [Homepage](https://github.com/MrCerber/DBM-Full-Music-system)
 
+## Commands
+
+**`!!play`** Add to queue / Start play.<br />
+**`!!queue`** Queue list (5 songs).<br />
+**`!!stop`** Stop playing, bot leave channal and clear queue.<br />
+**`!!skip`** Skip song.<br />
+**`!!pause`** Pause music.<br />
+**`!!resume`** Resume music.<br />
+**`!!volume`** Set / Show volume.
+
+## DON'T FORGET!!!
+
+Chenge the DJ channel **`ID`** in **`Events > [Music]Init`**
+
 ## Author
 
 👤 **Brian Fedotyve**
