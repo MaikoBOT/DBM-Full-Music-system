@@ -8,7 +8,7 @@
 
 **`!!play`** Add to queue / Start play.<br />
 **`!!queue`** Queue list (5 songs).<br />
-**`!!stop`** Stop playing, bot leave channal and clear queue.<br />
+**`!!stop`** Stop playing, bot leave channel and clear queue.<br />
 **`!!skip`** Skip song.<br />
 **`!!pause`** Pause music.<br />
 **`!!resume`** Resume music.<br />
