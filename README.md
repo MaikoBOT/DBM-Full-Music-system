@@ -4,6 +4,8 @@
 
 ### 🏠 [Homepage](https://github.com/MrCerber/DBM-Full-Music-system)
 
+![preview](https://i.imgur.com/BdoI3DE.png)
+
 ## Commands
 
 **`!!play`** Add to queue / Start play.<br />
