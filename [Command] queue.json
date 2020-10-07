@@ -1,12 +1,345 @@
 {
-    "name": "!pause",
-    "permissions": "NONE",
-    "restriction": "1",
-    "_id": "pbcNn",
-    "actions": [
-      {
-        "action": "1",
-        "name": "Control Audio"
-      }
-    ]
-  }
+  "name": "!queue",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "SNwyf",
+  "actions": [
+    {
+      "server": "0",
+      "info": "3",
+      "storage": "1",
+      "varName": "urlList",
+      "varName2": "",
+      "name": "Store Audio Info"
+    },
+    {
+      "list": "7",
+      "varName": "urlList",
+      "storage": "1",
+      "varName2": "ll",
+      "name": "Get List Length"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "${tempVars(\"urlList\")}\n${tempVars(\"ll\")}",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "title": "🎶 Следующие 5 песен:",
+      "author": "",
+      "color": "#3fe2e8",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "debug": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "queueMSG",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "ll",
+      "comparison": "4",
+      "value": "0",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "queueMSG",
+      "message": "`-Список пуст!`",
+      "name": "Set Embed Description"
+    },
+    {
+      "call": "32",
+      "name": "Jump to Action"
+    },
+    {
+      "storage": "1",
+      "varName": "ll",
+      "comparison": "14",
+      "value": "1",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "2",
+      "iffalseVal": "30",
+      "name": "Check Variable"
+    },
+    {
+      "list": "7",
+      "varName": "urlList",
+      "getType": "3",
+      "position": "0",
+      "storage": "1",
+      "varName2": "url1",
+      "name": "Get Item from List"
+    },
+    {
+      "token": "",
+      "user": "",
+      "pass": "",
+      "url": "https://yt-scraper.eclipseapis.ga/api/v1/video?q=${tempVars(\"url1\")}",
+      "path": "title",
+      "storage": "1",
+      "varName": "title1",
+      "debugMode": "0",
+      "headers": "",
+      "reUse": "1",
+      "name": "Store Json From WebAPI"
+    },
+    {
+      "storage": "1",
+      "varName": "title1",
+      "info": "2",
+      "info2": "",
+      "value": "1. ",
+      "storage2": "1",
+      "varName2": "1",
+      "name": "Variable Pattern MOD"
+    },
+    {
+      "storage": "1",
+      "varName": "ll",
+      "comparison": "14",
+      "value": "2",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "2",
+      "iffalseVal": "30",
+      "name": "Check Variable"
+    },
+    {
+      "list": "7",
+      "varName": "urlList",
+      "getType": "3",
+      "position": "1",
+      "storage": "1",
+      "varName2": "url2",
+      "name": "Get Item from List"
+    },
+    {
+      "token": "",
+      "user": "",
+      "pass": "",
+      "url": "https://yt-scraper.eclipseapis.ga/api/v1/video?q=${tempVars(\"url2\")}",
+      "path": "title",
+      "storage": "1",
+      "varName": "title2",
+      "debugMode": "0",
+      "headers": "",
+      "reUse": "1",
+      "name": "Store Json From WebAPI"
+    },
+    {
+      "storage": "1",
+      "varName": "title2",
+      "info": "2",
+      "info2": "",
+      "value": "2. ",
+      "storage2": "1",
+      "varName2": "2",
+      "name": "Variable Pattern MOD"
+    },
+    {
+      "storage": "1",
+      "varName": "ll",
+      "comparison": "14",
+      "value": "3",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "2",
+      "iffalseVal": "30",
+      "name": "Check Variable"
+    },
+    {
+      "list": "7",
+      "varName": "urlList",
+      "getType": "3",
+      "position": "2",
+      "storage": "1",
+      "varName2": "url3",
+      "name": "Get Item from List"
+    },
+    {
+      "token": "",
+      "user": "",
+      "pass": "",
+      "url": "https://yt-scraper.eclipseapis.ga/api/v1/video?q=${tempVars(\"url3\")}",
+      "path": "title",
+      "storage": "1",
+      "varName": "title3",
+      "debugMode": "0",
+      "headers": "",
+      "reUse": "1",
+      "name": "Store Json From WebAPI"
+    },
+    {
+      "storage": "1",
+      "varName": "title3",
+      "info": "2",
+      "info2": "",
+      "value": "3. ",
+      "storage2": "1",
+      "varName2": "3",
+      "name": "Variable Pattern MOD"
+    },
+    {
+      "storage": "1",
+      "varName": "ll",
+      "comparison": "14",
+      "value": "4",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "2",
+      "iffalseVal": "30",
+      "name": "Check Variable"
+    },
+    {
+      "list": "7",
+      "varName": "urlList",
+      "getType": "3",
+      "position": "3",
+      "storage": "1",
+      "varName2": "url4",
+      "name": "Get Item from List"
+    },
+    {
+      "token": "",
+      "user": "",
+      "pass": "",
+      "url": "https://yt-scraper.eclipseapis.ga/api/v1/video?q=${tempVars(\"url4\")}",
+      "path": "title",
+      "storage": "1",
+      "varName": "title4",
+      "debugMode": "0",
+      "headers": "",
+      "reUse": "1",
+      "name": "Store Json From WebAPI"
+    },
+    {
+      "storage": "1",
+      "varName": "title4",
+      "info": "2",
+      "info2": "",
+      "value": "4. ",
+      "storage2": "1",
+      "varName2": "4",
+      "name": "Variable Pattern MOD"
+    },
+    {
+      "storage": "1",
+      "varName": "ll",
+      "comparison": "14",
+      "value": "1",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "2",
+      "iffalseVal": "30",
+      "name": "Check Variable"
+    },
+    {
+      "list": "7",
+      "varName": "urlList",
+      "getType": "3",
+      "position": "4",
+      "storage": "1",
+      "varName2": "url5",
+      "name": "Get Item from List"
+    },
+    {
+      "token": "",
+      "user": "",
+      "pass": "",
+      "url": "https://yt-scraper.eclipseapis.ga/api/v1/video?q=${tempVars(\"url5\")}",
+      "path": "title",
+      "storage": "1",
+      "varName": "title5",
+      "debugMode": "0",
+      "headers": "",
+      "reUse": "1",
+      "name": "Store Json From WebAPI"
+    },
+    {
+      "storage": "1",
+      "varName": "title5",
+      "info": "2",
+      "info2": "",
+      "value": "5. ",
+      "storage2": "1",
+      "varName2": "5",
+      "name": "Variable Pattern MOD"
+    },
+    {
+      "storage": "1",
+      "varName": "ll",
+      "comparison": "4",
+      "value": "5",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "2",
+      "iffalseVal": "30",
+      "name": "Check Variable"
+    },
+    {
+      "text": "и еще NUM песен.",
+      "text2": "NUM",
+      "text3": "${tempVars(\"ll\")-5}",
+      "info": "0",
+      "storage": "1",
+      "varName": "songs",
+      "name": "Replace Text"
+    },
+    {
+      "text": "${tempVars(\"1\")}\n${tempVars(\"2\")}\n${tempVars(\"3\")}\n${tempVars(\"4\")}\n${tempVars(\"5\")}\n${tempVars(\"songs\")}",
+      "text2": "undefined",
+      "text3": "",
+      "info": "1",
+      "storage": "1",
+      "varName": "text",
+      "name": "Replace Text"
+    },
+    {
+      "storage": "1",
+      "varName": "queueMSG",
+      "message": "${tempVars(\"text\")}",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "queueMSG",
+      "message": "BlackCat | Music",
+      "footerIcon": "${globalVars(\"botAVA\")}",
+      "name": "Set Embed Footer"
+    },
+    {
+      "storage": "1",
+      "varName": "queueMSG",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "0",
+      "varName3": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "messageContent": "",
+      "name": "Send Embed Message"
+    }
+  ]
+}

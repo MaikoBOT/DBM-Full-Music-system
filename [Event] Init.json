@@ -1,64 +1,69 @@
 {
-    "name": "[Music] Init",
-    "temp": "",
-    "event-type": "1",
-    "_id": "EsABl",
-    "actions": [
-      {
-        "behavior": "2",
-        "name": "Run Action Sequence Once"
-      },
-      {
-        "name": "Clear Queue"
-      },
-      {
-        "storage": "2",
-        "varName": "bot_pause",
-        "changeType": "0",
-        "value": "0",
-        "name": "Control Variable"
-      },
-      {
-        "storage": "2",
-        "varName": "bot_pause",
-        "name": "Save Variable"
-      },
-      {
-        "comment": "ID of music text channal",
-        "color": "#80ff80",
-        "name": "Comment"
-      },
-      {
-        "info": "0",
-        "find": "*****CHENGE-ME*****",
-        "storage": "2",
-        "varName": "dj_ch",
-        "name": "Find Channel"
-      },
-      {
-        "storage": "2",
-        "varName": "dj_ch",
-        "name": "Save Variable"
-      },
-      {
-        "comment": "Default voulume 50",
-        "color": "#80ff80",
-        "name": "Comment"
-      },
-      {
-        "storage": "1",
-        "varName": "botVOL",
-        "changeType": "0",
-        "value": "50",
-        "name": "Control Variable"
-      },
-      {
-        "storage": "2",
-        "varName": "botVOL",
-        "name": "Save Variable"
-      },
-      {
-        "name": "End Action Sequence"
-      }
-    ]
-  }
+  "name": "[Music] Init",
+  "temp": "",
+  "event-type": "1",
+  "_id": "EsABl",
+  "actions": [
+    {
+      "behavior": "2",
+      "name": "Run Action Sequence Once"
+    },
+    {
+      "name": "Clear Queue"
+    },
+    {
+      "storage": "2",
+      "varName": "bot_pause",
+      "changeType": "0",
+      "value": "0",
+      "name": "Control Variable"
+    },
+    {
+      "storage": "2",
+      "varName": "bot_pause",
+      "name": "Save Variable"
+    },
+    {
+      "comment": "ID of music text channal",
+      "color": "#80ff80",
+      "name": "Comment"
+    },
+    {
+      "info": "0",
+      "find": "673981570121596929",
+      "storage": "2",
+      "varName": "dj_ch",
+      "name": "Find Channel"
+    },
+    {
+      "storage": "2",
+      "varName": "dj_ch",
+      "name": "Save Variable"
+    },
+    {
+      "comment": "Default voulume 50",
+      "color": "#80ff80",
+      "name": "Comment"
+    },
+    {
+      "storage": "2",
+      "varName": "botVOL",
+      "changeType": "0",
+      "value": "50",
+      "name": "Control Variable"
+    },
+    {
+      "storage": "2",
+      "varName": "botVOL",
+      "name": "Save Variable"
+    },
+    {
+      "tosend": "test",
+      "color": "#f2f2f2",
+      "name": "Send Message to Console"
+    },
+    {
+      "name": "End Action Sequence"
+    }
+  ]
+}
