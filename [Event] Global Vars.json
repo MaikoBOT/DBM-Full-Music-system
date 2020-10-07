@@ -1,0 +1,32 @@
+{
+    "name": "[Init] Global Vars",
+    "temp": "",
+    "event-type": "1",
+    "_id": "LpVOo",
+    "actions": [
+      {
+        "behavior": "3",
+        "name": "Run Action Sequence Once"
+      },
+      {
+        "server": "0",
+        "varName": "",
+        "storage": "1",
+        "varName2": "botMEM",
+        "name": "Get Bot as Member"
+      },
+      {
+        "member": "2",
+        "varName": "botMEM",
+        "info": "16",
+        "storage": "3",
+        "varName2": "botAVA",
+        "name": "Store Member Info"
+      },
+      {
+        "storage": "3",
+        "varName": "botAVA",
+        "name": "Save Variable"
+      }
+    ]
+  }
