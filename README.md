@@ -37,4 +37,4 @@ Give a ⭐️ if this project helped you!
 ## 📝 License
 
 Copyright © 2020 [Brian Fedotyve](https://github.com/MrCerber).<br />
-This project is [GNU](https://github.com/MrCerber/DBM-Full-Music-system/blob/main/LICENSE) licensed.
+This project is [GPL](https://github.com/MrCerber/DBM-Full-Music-system/blob/main/LICENSE) licensed.
